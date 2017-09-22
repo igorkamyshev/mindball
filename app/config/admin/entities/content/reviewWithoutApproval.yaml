@@ -1,0 +1,20 @@
+easy_admin:
+    entities:
+        ReviewWithoutApproval:
+            class: AppBundle\Entity\Review
+            label: entity.review.title
+            list:
+                dql_filter: 'entity.approved = false'
+                title: entity.reviewWithoutApproval.list
+                sort: 'createdAt'
+                fields:
+                    - createdAt
+                    - tournamentSeason
+                    - approved
+                    - body
+            form:
+                title: entity.review.form
+                fields:
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.general', icon: 'info' }
+                    - body
+                    - approved

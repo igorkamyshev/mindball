@@ -95,6 +95,11 @@ class TournamentSeason
     public function __construct()
     {
         $this->leagues = new ArrayCollection();
+
+        $this->qualifyingRoundStartDate = new \DateTime();
+        $this->qualifyingRoundEndDate = new \DateTime();
+        $this->startDate = new \DateTime();
+        $this->endDate = new \DateTime();
     }
 
 
@@ -175,9 +180,7 @@ class TournamentSeason
         return $this->qualifyingRoundStartDate;
     }
 
-    public function setQualifyingRoundStartDate(
-        ?\DateTime $qualifyingRoundStartDate
-    ): TournamentSeason
+    public function setQualifyingRoundStartDate($qualifyingRoundStartDate): TournamentSeason
     {
         $this->qualifyingRoundStartDate = $qualifyingRoundStartDate;
 
@@ -189,9 +192,7 @@ class TournamentSeason
         return $this->qualifyingRoundEndDate;
     }
 
-    public function setQualifyingRoundEndDate(
-        ?\DateTime $qualifyingRoundEndDate
-    ): TournamentSeason
+    public function setQualifyingRoundEndDate($qualifyingRoundEndDate): TournamentSeason
     {
         $this->qualifyingRoundEndDate = $qualifyingRoundEndDate;
 
@@ -203,7 +204,7 @@ class TournamentSeason
         return $this->startDate;
     }
 
-    public function setStartDate(?\DateTime $startDate): TournamentSeason
+    public function setStartDate($startDate): TournamentSeason
     {
         $this->startDate = $startDate;
 
@@ -215,7 +216,7 @@ class TournamentSeason
         return $this->endDate;
     }
 
-    public function setEndDate(?\DateTime $endDate): TournamentSeason
+    public function setEndDate($endDate): TournamentSeason
     {
         $this->endDate = $endDate;
 

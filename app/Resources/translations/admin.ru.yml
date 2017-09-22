@@ -26,6 +26,12 @@ entity.advert.title: Объявление
 entity.advert.list: Объявления
 entity.advert.form: Редактирование объявления
 
+entity.review.title: Отзыв
+entity.review.list: Отзывы
+entity.review.form: Редактирование отзывов
+
+entity.reviewWithoutApproval.list: Неодобренные отзывы
+
 action.search: Искать
 action.new: Создать
 action.save: Сохранить
@@ -49,6 +55,7 @@ Leagues: Лиги
 Tournament: Турнир
 Tournaments: Турниры
 TournamentSeason: Сезон турнира
+Tournament season: Сезон турнира
 Unlimited license: Безлимитная лицензия
 Available licenses: Доступно лицензий
 Seasons count: Зарегистрировано сезонов
@@ -56,3 +63,6 @@ Qualifying round start date: Начало отборочного тура
 Qualifying round end date: Конец отборочного тура
 Start date: Начало турнира
 End date: Конец турнира
+Approved: Одобрено
+Review: Отзыв
+ReviewWithoutApproval: Неодобренный отзыв

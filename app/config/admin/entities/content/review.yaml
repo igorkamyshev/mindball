@@ -1,0 +1,22 @@
+easy_admin:
+    entities:
+        Review:
+            class: AppBundle\Entity\Review
+            label: entity.review.title
+            list:
+                title: entity.review.list
+                sort: 'createdAt'
+                fields:
+                    - createdAt
+                    - tournamentSeason
+                    - approved
+                    - body
+            form:
+                title: entity.review.form
+                fields:
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.general', icon: 'info' }
+                    - tournamentSeason
+                    - createdAt
+                    - approved
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.content', icon: 'file-text' }
+                    - body

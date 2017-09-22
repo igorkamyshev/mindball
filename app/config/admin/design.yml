@@ -1,0 +1,5 @@
+easy_admin:
+    site_name: 'MindBall'
+    design:
+        form_theme:  'vertical'
+        brand_color: '#0768B2'

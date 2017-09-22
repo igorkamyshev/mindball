@@ -1,0 +1,27 @@
+easy_admin:
+    entities:
+        Tournament:
+            class: AppBundle\Entity\Tournament
+            label: entity.tournament.title
+            list:
+                title: entity.tournament.list
+                sort: 'title'
+                fields:
+                    - title
+                    - area
+                    - unlimitedLicense
+                    - availableLicenses
+                    - seasonsCount
+            form:
+                title: entity.tournament.form
+                fields:
+                    - { type: 'group', css_class: 'col-sm-12 col-md-6', label: 'form.general', icon: 'info' }
+                    - title
+                    - area
+
+                    - { type: 'group', css_class: 'col-sm-12 col-md-6', label: 'form.license', icon: 'files-o' }
+                    - unlimitedLicense
+                    - availableLicenses
+                    - { property: seasonsCount, type: number, type_options: { disabled: true } }
+
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.org', icon: 'users' }

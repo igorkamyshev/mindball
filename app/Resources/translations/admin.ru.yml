@@ -1,0 +1,37 @@
+menu.main: Основные
+menu.finance: Финансы
+menu.content: Контент сайта
+
+form.general: Основная информация
+form.license: Лицензия
+form.org: Организаторы
+
+entity.area.title: Город
+entity.area.list: Города
+entity.area.form: Редактирование города
+
+entity.tournament.title: Турнир
+entity.tournament.list: Турниры
+entity.tournament.form: Редактирование турнира
+
+entity.season.title: Сезон турнира
+entity.season.list: Сезоны турниров
+entity.season.form: Редактирование сезона
+
+action.search: Искать
+action.new: Создать
+action.save: Сохранить
+action.list: К списку
+action.edit: Редактировать
+action.delete: Удалить
+action.cancel: Отмена
+
+Year: Год
+Area: Город
+Title: Название
+Tournament: Турнир
+Tournaments: Турниры
+TournamentSeason: Сезон турнира
+Unlimited license: Безлимитная лицензия
+Available licenses: Доступно лицензий
+Seasons count: Зарегистрировано сезонов

@@ -1,0 +1,11 @@
+easy_admin:
+    design:
+        menu:
+            - { label: menu.main }
+            - { entity: 'Area', icon: 'map-marker', label: entity.area.list }
+            - { entity: 'Tournament', icon: 'dot-circle-o', label: entity.tournament.list }
+            - { entity: 'TournamentSeason', icon: 'calendar-check-o', label: entity.season.list }
+
+            - { label: menu.finance }
+
+            - { label: menu.content }

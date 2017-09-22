@@ -1,0 +1,16 @@
+easy_admin:
+    entities:
+        Area:
+            class: AppBundle\Entity\Area
+            label: entity.area.title
+            list:
+                title: entity.area.list
+                sort: 'title'
+                fields:
+                    - title
+                    - tournaments
+            form:
+                title: entity.area.form
+                fields:
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.general', icon: 'info' }
+                    - title

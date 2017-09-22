@@ -35,6 +35,9 @@ action.delete: Удалить
 action.cancel: Отмена
 
 Year: Год
+Advert: Объявление
+Intro: Интро
+Body: Основной текст
 Level: Уровень
 Description: Описание
 Priority: Приоритет

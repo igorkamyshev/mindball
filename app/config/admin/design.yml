@@ -3,3 +3,5 @@ easy_admin:
     design:
         form_theme:  'vertical'
         brand_color: '#0768B2'
+        assets:
+            favicon: '/assets/backend/favicon.ico'

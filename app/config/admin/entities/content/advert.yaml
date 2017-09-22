@@ -1,0 +1,22 @@
+easy_admin:
+    entities:
+        Advert:
+            class: AppBundle\Entity\Advert
+            label: entity.advert.title
+            list:
+                title: entity.advert.list
+                sort: 'createdAt'
+                fields:
+                    - createdAt
+                    - title
+                    - priority
+            form:
+                title: entity.advert.form
+                fields:
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.general', icon: 'info' }
+                    - title
+                    - priority
+                    - createdAt
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.content', icon: 'file-text' }
+                    - intro
+                    - body

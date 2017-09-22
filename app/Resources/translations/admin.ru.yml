@@ -22,6 +22,10 @@ entity.season.title: Сезон турнира
 entity.season.list: Сезоны турниров
 entity.season.form: Редактирование сезона
 
+entity.advert.title: Объявление
+entity.advert.list: Объявления
+entity.advert.form: Редактирование объявления
+
 action.search: Искать
 action.new: Создать
 action.save: Сохранить
@@ -33,6 +37,8 @@ action.cancel: Отмена
 Year: Год
 Level: Уровень
 Description: Описание
+Priority: Приоритет
+Created at: Создано
 Area: Город
 Title: Название
 Leagues: Лиги

@@ -5,8 +5,9 @@ easy_admin:
             label: entity.tournament.title
             list:
                 title: entity.tournament.list
-                sort: 'title'
+                sort: 'id'
                 fields:
+                    - id
                     - title
                     - area
                     - unlimitedLicense

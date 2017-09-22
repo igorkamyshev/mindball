@@ -1,0 +1,38 @@
+easy_admin:
+    formats:
+        number: '%01.0f'
+    entities:
+        TournamentSeason:
+            class: AppBundle\Entity\TournamentSeason
+            label: entity.season.title
+            list:
+                title: entity.season.list
+                sort: 'year'
+                fields:
+                    - year
+                    - title
+                    - tournament
+            form:
+                title: entity.season.form
+                fields:
+                    - { type: 'group', css_class: 'col-sm-12 col-md-6', label: 'form.general', icon: 'info' }
+                    - title
+                    - year
+                    - tournament
+
+                    - { type: 'group', css_class: 'col-sm-12 col-md-6', label: 'form.dates', icon: 'calendar-check-o' }
+                    - qualifyingRoundStartDate
+                    - qualifyingRoundEndDate
+                    - { type: 'divider' }
+                    - startDate
+                    - endDate
+
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.content', icon: 'graduation-cap' }
+                    - {
+                        property: leagues,
+                        type: 'collection',
+                        type_options: {
+                          entry_type: 'AppBundle\Form\TournamentLeagueType',
+                          by_reference: false,
+                        }
+                      }

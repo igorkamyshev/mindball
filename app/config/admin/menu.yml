@@ -7,5 +7,6 @@ easy_admin:
             - { entity: 'TournamentSeason', icon: 'calendar-check-o', label: entity.season.list }
 
             - { label: menu.finance }
+            - { entity: TournamentWithoutLicense, icon: 'exclamation-triangle', label: entity.tournamentWithoutLicense.list }
 
             - { label: menu.content }

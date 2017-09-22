@@ -50,7 +50,7 @@ class Tournament
     private $area;
 
     /**
-     * @var ArrayCollection
+     * @var Collection
      *
      * @ORM\OneToMany(targetEntity="TournamentSeason", mappedBy="tournament")
      */

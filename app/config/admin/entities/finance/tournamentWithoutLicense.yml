@@ -1,0 +1,15 @@
+easy_admin:
+    entities:
+        TournamentWithoutLicense:
+            class: AppBundle\Entity\Tournament
+            label: entity.tournament.title
+            list:
+                title: entity.tournamentWithoutLicense.list
+                dql_filter: 'entity.availableLicenses = 0 AND entity.unlimitedLicense = false'
+                actions: ['-edit', '-delete']
+                sort: 'id'
+                fields:
+                    - id
+                    - title
+                    - area
+                    - seasonsCount

@@ -5,6 +5,8 @@ menu.content: Контент сайта
 form.general: Основная информация
 form.license: Лицензия
 form.org: Организаторы
+form.content: Содержимое
+form.dates: Даты
 
 entity.area.title: Город
 entity.area.list: Города
@@ -13,6 +15,8 @@ entity.area.form: Редактирование города
 entity.tournament.title: Турнир
 entity.tournament.list: Турниры
 entity.tournament.form: Редактирование турнира
+
+entity.tournamentWithoutLicense.list: Турниры без лицензии
 
 entity.season.title: Сезон турнира
 entity.season.list: Сезоны турниров
@@ -27,11 +31,18 @@ action.delete: Удалить
 action.cancel: Отмена
 
 Year: Год
+Level: Уровень
+Description: Описание
 Area: Город
 Title: Название
+Leagues: Лиги
 Tournament: Турнир
 Tournaments: Турниры
 TournamentSeason: Сезон турнира
 Unlimited license: Безлимитная лицензия
 Available licenses: Доступно лицензий
 Seasons count: Зарегистрировано сезонов
+Qualifying round start date: Начало отборочного тура
+Qualifying round end date: Конец отборочного тура
+Start date: Начало турнира
+End date: Конец турнира

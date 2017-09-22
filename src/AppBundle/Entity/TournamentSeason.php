@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -54,6 +56,47 @@ class TournamentSeason
      */
     private $tournament;
 
+    /**
+     * @var Collection
+     *
+     * @ORM\OneToMany(targetEntity="TournamentLeague", mappedBy="season", cascade={"persist"})
+     */
+    private $leagues;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="qualifying_round_start_date", type="datetime", nullable=true)
+     */
+    private $qualifyingRoundStartDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="qualifying_round_end_date", type="datetime", nullable=true)
+     */
+    private $qualifyingRoundEndDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="start_date", type="datetime", nullable=true)
+     */
+    private $startDate;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="end_date", type="datetime", nullable=true)
+     */
+    private $endDate;
+
+
+    public function __construct()
+    {
+        $this->leagues = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -99,5 +142,88 @@ class TournamentSeason
         $this->tournament = $tournament;
 
         return $this;
+    }
+
+    public function getLeagues() : Collection
+    {
+        return $this->leagues;
+    }
+
+    public function addLeague(TournamentLeague $league) : TournamentSeason
+    {
+        $this->leagues->add($league);
+
+        return $this;
+    }
+
+    public function removeLeague(TournamentLeague $league) : TournamentSeason
+    {
+        $this->leagues->removeElement($league);
+
+        return $this;
+    }
+
+    public function clearLeagues() : TournamentSeason
+    {
+        $this->leagues->clear();
+
+        return $this;
+    }
+
+    public function getQualifyingRoundStartDate(): ?\DateTime
+    {
+        return $this->qualifyingRoundStartDate;
+    }
+
+    public function setQualifyingRoundStartDate(
+        ?\DateTime $qualifyingRoundStartDate
+    ): TournamentSeason
+    {
+        $this->qualifyingRoundStartDate = $qualifyingRoundStartDate;
+
+        return $this;
+    }
+
+    public function getQualifyingRoundEndDate(): ?\DateTime
+    {
+        return $this->qualifyingRoundEndDate;
+    }
+
+    public function setQualifyingRoundEndDate(
+        ?\DateTime $qualifyingRoundEndDate
+    ): TournamentSeason
+    {
+        $this->qualifyingRoundEndDate = $qualifyingRoundEndDate;
+
+        return $this;
+    }
+
+    public function getStartDate(): ?\DateTime
+    {
+        return $this->startDate;
+    }
+
+    public function setStartDate(?\DateTime $startDate): TournamentSeason
+    {
+        $this->startDate = $startDate;
+
+        return $this;
+    }
+
+    public function getEndDate(): ?\DateTime
+    {
+        return $this->endDate;
+    }
+
+    public function setEndDate(?\DateTime $endDate): TournamentSeason
+    {
+        $this->endDate = $endDate;
+
+        return $this;
+    }
+
+    public function __toString() : string
+    {
+        return $this->getTitle() . ' – ' . $this->getTournament();
     }
 }

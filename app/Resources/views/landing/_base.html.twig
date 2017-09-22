@@ -8,119 +8,100 @@
 
     <link rel="shortcut icon" href="{{ asset('bundles/app/landing/images/favicon.ico') }}"/>
 
-    {% stylesheets
+    {% block styles %}
+        {% stylesheets
         'bundles/app/landing/css/materialize.css'
         'bundles/app/landing/css/style.css'
         filter='cssrewrite' %}
-        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
-    {% endstylesheets %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
+        {% endstylesheets %}
 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    {% endblock %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
 
-<div class="navbar-fixed">
-    <nav>
-        <div class="container">
+    <header class="navbar-fixed">
+        <nav>
             <div class="nav-wrapper">
                 <a href="http://mindball.org/" class="brand-logo text-logo">MindBall</a>
-                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li class="first active"><a href="/ ">Главная</a></li><li><a href="info/ ">Информация</a></li><li><a href="archive/ ">Архив</a></li><li class="last"><a href="reviews.html ">Отзывы</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-nav">
-                    <li class="first active"><a href="/ ">Главная</a></li><li><a href="info/ ">Информация</a></li><li><a href="archive/ ">Архив</a></li><li class="last"><a href="reviews.html ">Отзывы</a></li>
-                </ul>
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
-        </div>
-    </nav>
-</div>
-
-<main class="row">
-
-    <div class="col s12 m10 offset-m1">
-        <div class="card">
-            <div class="card-image hide-on-med-and-up">
-                <img src="/assets/template/img/logo-square-large-blue.png" alt="logo"/>
+        </nav>
+    </header>
+    <ul id="slide-out" class="side-nav fixed">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="http://lorempixel.com/400/400" alt="MindBall Back" />
+                </div>
+                <a href="#!user"><img class="circle" src="http://lorempixel.com/400/400" alt="MindBall Logo"></a>
+                <a href="#!name"><span class="white-text name">MindBall</span></a>
+                <a href="#!email"><span class="white-text email">lorem ips</span></a>
             </div>
-            <div class="card-content">
-                <div class="row" style="margin-bottom: 0px;">
-                    <div class="col m3 l2 hide-on-small-only">
-                        <img src="/assets/template/img/logo-square-large-blue.png" alt="logo" class="responsive-img" />
-                    </div>
-                    <div class="col s12 m9 l10">
-                        <span class="card-title text-logo">MindBall</span>
-                        <p>
-                            Турнир MindBall 2017 завершен, результаты будут опубликованы в ближайшее время.
-                            <br><br>
-                            Благодарим за участие, ждем вас в следующем году!
-                        </p>
-                    </div>
+        </li>
+
+        <li><a class="subheader">Томск</a></li>
+        <li><a href="#!"><i class="material-icons">flag</i>Физические бои 2018</a></li>
+        <li><div class="divider"></div></li>
+
+        <li><a class="subheader">Архив</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">rate_review</i>Впечатления</a></li>
+        <li><a class="waves-effect" href="#!"><i class="material-icons">photo_library</i>Фотографии</a></li>
+    </ul>
+
+    <main>
+        {% block content %}
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">MindBall</span>
+                </div>
+            </div>
+        {% endblock %}
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-wrapper">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <div class="row" style="margin: 0px;">
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="assets/img/mindball.jpg"/>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">MindBall 2018<i class="material-icons right">more_vert</i></span>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">MindBall 2018<i class="material-icons right">close</i></span>
-                        <p>Ждем вас в следующем году на турнир по физическим боям!</p>
-                        <p>С каждый годом турнир становится интереснее, задачи оригинальнее, а призы - приятнее.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m6">
-                <div class="card">
-                    <div class="card-image waves-effect waves-block waves-light">
-                        <img class="activator" src="assets/img/fizicheskij-fakultet.jpg"/>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Физический факультет<i class="material-icons right">more_vert</i></span>
-                    </div>
-                    <div class="card-reveal">
-                        <span class="card-title grey-text text-darken-4">Физический факультет<i class="material-icons right">close</i></span>
-                        <p>Важнейший   принцип  ФФ  –  это  фундаментальность образования. Ведь именно надежные обширные знания и их постоянное совершенствование, являются гарантом востребованности в современном мире.</p>
-                        <a class="btn" href="http://ff.tsu.ru/" target="_blank">Узнать больше</a>
-                    </div>
-                </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2016 - {{ "now"|date("Y") }} MindBall
             </div>
         </div>
-    </div>
-</main>
+    </footer>
 
-<footer class="page-footer">
-    <div class="container">
-        <div class="row">
-            <p><a href="http://mindschool.org/" class="white-text text-lighten-1">MindSchool - сообщество студентов, желающих развиваться.</a></p>
-            <p><a href="http://mindball.org/" class="white-text text-lighten-1">MindBall - турниры по физическим и физико-математическим боям.</a></p>
-        </div>
+    <div class="fixed-action-btn">
+        <a href="" class="btn-floating btn-large red">
+            <i class="large material-icons">account_circle</i>
+        </a>
     </div>
-    <div class="footer-copyright">
-        <div class="container">
-            Created by <a class="indigo-text text-lighten-5" target="_blank" href="http://tamers.su">Tamers Team</a>
-        </div>
-    </div>
-</footer>
 
-<div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
-    <a href="users/login.html" class="btn-large">Войти</a>
-</div>
+    {% block scripts %}
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 
-{% javascripts
-    '@AppBundle/Resources/public/landing/js/jquery.js'
-    '@AppBundle/Resources/public/landing/js/materialize.js'
-    '@AppBundle/Resources/public/landing/js/scripts.js'%}
-    <script type="text/javascript" src="{{ asset_url }}"></script>
-{% endjavascripts %}
+        {% javascripts '@AppBundle/Resources/public/landing/js/scripts.js'%}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+
 </body>
-
 </html>

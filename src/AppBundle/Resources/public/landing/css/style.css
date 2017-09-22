@@ -1,4 +1,42 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat+Alternates:400);
 .text-logo { font-family: "Montserrat Alternates" !important; }
 
-body { background: #eeeeee; }
+body {
+    background: #eeeeee;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.nav-wrapper, .footer-wrapper {
+    margin: 0 3rem;
+}
+
+main {
+    margin: 3rem;
+    flex: 1 0 auto;
+}
+
+#sidenav-overlay {
+    z-index: 1;
+}
+
+header, main, footer {
+    padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        margin: 1rem 0 0 0;
+    }
+
+    .nav-wrapper, .footer-wrapper {
+        margin: 0;
+    }
+}

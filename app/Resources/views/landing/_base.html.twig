@@ -3,17 +3,18 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="theme-color" content="#0768B2">
-
-    <base href="http://mindball.org" />
 
     <title>MindBall - Главная</title>
 
-    <link rel="shortcut icon" href="/assets/template/img/favicon.ico"/>
-    <link rel="icon" sizes="192x192" href="/assets/template/img/logo-192.png">
+    <link rel="shortcut icon" href="{{ asset('bundles/app/landing/images/favicon.ico') }}"/>
 
-    <link rel="stylesheet" href="/assets/template/css/materialize.css" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/template/css/style.css" type="text/css" media="all">
+    {% stylesheets
+        'bundles/app/landing/css/materialize.css'
+        'bundles/app/landing/css/style.css'
+        filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
+    {% endstylesheets %}
+
     <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -114,9 +115,12 @@
     <a href="users/login.html" class="btn-large">Войти</a>
 </div>
 
-<script type="text/javascript" src="/assets/template/js/jquery.js"></script>
-<script type="text/javascript" src="/assets/template/js/materialize.js"></script>
-<script type="text/javascript" src="/assets/template/js/scripts.js"></script>
+{% javascripts
+    '@AppBundle/Resources/public/landing/js/jquery.js'
+    '@AppBundle/Resources/public/landing/js/materialize.js'
+    '@AppBundle/Resources/public/landing/js/scripts.js'%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
 </body>
 
 </html>

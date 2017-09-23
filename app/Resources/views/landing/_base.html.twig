@@ -27,7 +27,7 @@
     <header class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <a href="http://mindball.org/" class="brand-logo text-logo">MindBall</a>
+                <a href="{{ path("homepage") }}" class="brand-logo text-logo">MindBall</a>
                 <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
             </div>
         </nav>
@@ -36,9 +36,9 @@
         <li>
             <div class="user-view">
                 <div class="background">
-                    <img src="http://lorempixel.com/400/400" alt="MindBall Back" />
+                    <img class="responsive-img" src="{{ asset('bundles/app/landing/images/backgroud.jpg') }}" alt="MindBall Back" />
                 </div>
-                <a href="#!user"><img class="circle" src="http://lorempixel.com/400/400" alt="MindBall Logo"></a>
+                <a href="#!user"><img class="circle" src="{{ asset('bundles/app/landing/images/logo_blue.jpg') }}" alt="MindBall Logo"></a>
                 <a href="#!name"><span class="white-text name">MindBall</span></a>
                 <a href="#!email"><span class="white-text email">lorem ips</span></a>
             </div>

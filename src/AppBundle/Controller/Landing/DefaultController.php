@@ -20,7 +20,7 @@ class DefaultController extends Controller
         $adverts = $this
             ->getDoctrine()
             ->getRepository(Advert::class)
-            ->findBy([], ['createdAt' => 'ASC'], self::LAST_ADVERTS_LIMIT);
+            ->findBy([], ['createdAt' => 'DESC'], self::LAST_ADVERTS_LIMIT);
 
         return $this->render(
             'landing/index.html.twig',
@@ -39,7 +39,7 @@ class DefaultController extends Controller
         $adverts = $this
             ->getDoctrine()
             ->getRepository(Advert::class)
-            ->findBy([], ['createdAt' => 'ASC'], self::LAST_ADVERTS_LIMIT);
+            ->findBy([], ['createdAt' => 'DESC'], self::LAST_ADVERTS_LIMIT);
 
         return $this->render(
             'landing/adverts.html.twig',

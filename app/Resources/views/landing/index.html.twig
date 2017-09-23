@@ -2,15 +2,16 @@
 
 {% block content %}
     <div class="row">
-        <div class="col s12 l7 push-l5">
+        <div class="col s12 l5 push-l7">
             {% for advert in adverts %}
                 <div class="card sticky-action">
                     <div class="card-image">
                         <img class="activator" src="http://lorempixel.com/800/400" alt="New item" />
                     </div>
                     <div class="card-content">
-                        <span class="card-title activator">{{ advert.title }}<i class="material-icons right">more_vert</i></span>
-
+                        <span class="card-title activator">
+                            {{ advert.title }}
+                            <span class="chip right">{{ advert.createdAt|date("d.m.Y") }}</span>
                     </div>
                     <div class="card-action">
                         <a href="{{ path('advert', { slug: advert.slug }) }}">Подробнее</a>
@@ -21,8 +22,10 @@
                     </div>
                 </div>
             {% endfor %}
+
+            <a href="{{ path('adverts') }}" class="btn btn-block">Все новости</a>
         </div>
-        <div class="col s12 l5 pull-l7">
+        <div class="col s12 l7 pull-l5">
             <div class="card">
                 <div class="card-content">
                     <p>...</p>

@@ -39,7 +39,7 @@
                     <img class="responsive-img" src="{{ asset('bundles/app/landing/images/backgroud.jpg') }}" alt="MindBall Back" />
                 </div>
                 <a href="{{ path('homepage') }}"><img class="circle" src="{{ asset('bundles/app/landing/images/logo_blue.jpg') }}" alt="MindBall Logo"></a>
-                <a href="#!name"><span class="white-text name">MindBall</span></a>
+                <a href="#!"><span class="white-text name">MindBall</span></a>
                 <a href="#!email"><span class="white-text email">lorem ips</span></a>
             </div>
         </li>
@@ -50,18 +50,22 @@
 
         <li><a class="subheader">Архив</a></li>
         <li><a class="waves-effect" href="{{ path('adverts') }}"><i class="material-icons">assignment</i>Новости</a></li>
-        <li><a class="waves-effect" href="#!"><i class="material-icons">rate_review</i>Впечатления</a></li>
-        <li><a class="waves-effect" href="#!"><i class="material-icons">photo_library</i>Фотографии</a></li>
+        <li><a class="waves-effect" href="{{ path('reviews') }}"><i class="material-icons">rate_review</i>Впечатления</a></li>
+        <li><a class="waves-effect" href="{{ path('albums') }}"><i class="material-icons">photo_library</i>Фотографии</a></li>
     </ul>
 
     <main>
-        {% block content %}
-            <div class="card">
-                <div class="card-content">
-                    <span class="card-title">MindBall</span>
+        <div class="row">
+            {% block content %}
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">MindBall</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        {% endblock %}
+            {% endblock %}
+        </div>
     </main>
 
     <footer class="page-footer">
@@ -97,7 +101,7 @@
 
     {% block scripts %}
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 
         {% javascripts '@AppBundle/Resources/public/landing/js/scripts.js'%}
             <script type="text/javascript" src="{{ asset_url }}"></script>

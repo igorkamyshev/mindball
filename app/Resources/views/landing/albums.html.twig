@@ -3,5 +3,16 @@
 {% block content %}
     <div class="col s12">
         <h3>Турниры</h3>
+        {% for tournament in tournaments %}
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">{{ tournament.title }}</span>
+                    <span>{{ tournament.area.title }}</span>
+                </div>
+                <div class="card-action">
+                    <a href="{{ path("tournament_albums", { slug: tournament.slug }) }}">Открыть</a>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

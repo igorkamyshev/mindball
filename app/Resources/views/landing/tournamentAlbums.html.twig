@@ -2,6 +2,17 @@
 
 {% block content %}
     <div class="col s12">
-        <h3>{{ tournament.title }}</h3>
+        <h3>{{ tournament.title }} <small>{{ tournament.area.title }}</small></h3>
+        {% for season in tournament.pastSeasons %}
+            <div class="card">
+                <div class="card-content">
+                    <span class="chip right">{{ season.year }}</span>
+                    <span class="card-title">{{ season.title }}</span>
+                </div>
+                <div class="card-action">
+                    <a href="#!">Смотреть</a>
+                </div>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

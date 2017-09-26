@@ -165,6 +165,14 @@ class Tournament
         return $this->seasons->count();
     }
 
+    public function getPastSeasons() : Collection
+    {
+        return $this->seasons->filter(
+            function (TournamentSeason $season) {
+                return $season->getEndDate() < (new \DateTime());
+        });
+    }
+
     public function __toString() : string
     {
         return $this->getTitle() . ' (' . $this->getArea() . ')';

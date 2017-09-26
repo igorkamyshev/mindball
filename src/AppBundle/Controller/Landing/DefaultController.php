@@ -96,7 +96,7 @@ class DefaultController extends Controller
         $tournaments = $this
             ->getDoctrine()
             ->getRepository(Tournament::class)
-            ->findBy(['id' => 'DESC']);
+            ->findBy([], ['id' => 'DESC']);
 
         return $this->render(
             'landing/albums.html.twig',

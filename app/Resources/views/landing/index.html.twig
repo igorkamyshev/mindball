@@ -12,6 +12,7 @@
                         <span class="card-title activator">
                             {{ advert.title }}
                             <span class="chip right">{{ advert.createdAt|date("d.m.Y") }}</span>
+                        </span>
                     </div>
                     <div class="card-action">
                         <a href="{{ path('advert', { slug: advert.slug }) }}">Подробнее</a>

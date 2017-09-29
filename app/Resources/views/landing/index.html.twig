@@ -29,7 +29,7 @@
             {% for info in infoCards %}
                 <div class="card">
                     <div class="card-content">
-                        <p>{{ info.body|raw }}</p>
+                        {{ info.body|md2html|raw }}
                     </div>
                 </div>
             {% endfor %}

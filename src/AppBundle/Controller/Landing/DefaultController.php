@@ -120,7 +120,7 @@ class DefaultController extends Controller
     public function tournamentAlbumsAction(Tournament $tournament)
     {
         return $this->render(
-            'landing/tournamentAlbums.html.twig',
+            'landing/tournament_albums.html.twig',
             [
                 'tournament' => $tournament,
             ]

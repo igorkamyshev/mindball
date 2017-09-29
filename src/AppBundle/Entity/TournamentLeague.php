@@ -61,17 +61,26 @@ class TournamentLeague
      */
     private $season;
 
-    public function getId(): ?int
+    /**
+     * @return int
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getSlug(): ?string
+    /**
+     * @return string
+     */
+    public function getSlug()
     {
         return $this->slug;
     }
 
-    public function getTitle(): ?string
+    /**
+     * @return string
+     */
+    public function getTitle()
     {
         return $this->title;
     }
@@ -83,7 +92,10 @@ class TournamentLeague
         return $this;
     }
 
-    public function getLevel(): ?int
+    /**
+     * @return int
+     */
+    public function getLevel()
     {
         return $this->level;
     }
@@ -95,7 +107,10 @@ class TournamentLeague
         return $this;
     }
 
-    public function getDescription(): ?string
+    /**
+     * @return string
+     */
+    public function getDescription()
     {
         return $this->description;
     }
@@ -107,7 +122,10 @@ class TournamentLeague
         return $this;
     }
 
-    public function getSeason(): ?TournamentSeason
+    /**
+     * @return TournamentSeason
+     */
+    public function getSeason()
     {
         return $this->season;
     }

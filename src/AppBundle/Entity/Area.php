@@ -53,17 +53,26 @@ class Area
         $this->tournaments = new ArrayCollection();
     }
 
-    public function getId() : ?int
+    /**
+     * @return int
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getSlug() : ?string
+    /**
+     * @return string
+     */
+    public function getSlug()
     {
         return $this->slug;
     }
 
-    public function getTitle() : ?string
+    /**
+     * @return string
+     */
+    public function getTitle()
     {
         return $this->title;
     }

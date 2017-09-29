@@ -76,17 +76,26 @@ class Tournament
         $this->seasons = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    /**
+     * @return int
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getSlug(): ?string
+    /**
+     * @return string
+     */
+    public function getSlug()
     {
         return $this->slug;
     }
 
-    public function getTitle(): ?string
+    /**
+     * @return string
+     */
+    public function getTitle()
     {
         return $this->title;
     }
@@ -98,7 +107,10 @@ class Tournament
         return $this;
     }
 
-    public function getArea(): ?Area
+    /**
+     * @return Area
+     */
+    public function getArea()
     {
         return $this->area;
     }
@@ -148,7 +160,10 @@ class Tournament
         return $this;
     }
 
-    public function getAvailableLicenses(): ?int
+    /**
+     * @return int
+     */
+    public function getAvailableLicenses()
     {
         return $this->availableLicenses;
     }

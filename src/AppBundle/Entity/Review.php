@@ -52,12 +52,23 @@ class Review
      */
     private $approved = false;
 
-    public function getId(): ?int
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getBody(): ?string
+    /**
+     * @return string
+     */
+    public function getBody()
     {
         return $this->body;
     }
@@ -69,7 +80,10 @@ class Review
         return $this;
     }
 
-    public function getTournamentSeason(): ?TournamentSeason
+    /**
+     * @return TournamentSeason
+     */
+    public function getTournamentSeason()
     {
         return $this->tournamentSeason;
     }
@@ -81,7 +95,7 @@ class Review
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTime
+    public function getCreatedAt(): \DateTime
     {
         return $this->createdAt;
     }
@@ -93,9 +107,6 @@ class Review
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isApproved(): bool
     {
         return $this->approved;

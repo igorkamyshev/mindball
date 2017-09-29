@@ -103,17 +103,26 @@ class TournamentSeason
     }
 
 
-    public function getId(): ?int
+    /**
+     * @return int
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getSlug(): ?string
+    /**
+     * @return string
+     */
+    public function getSlug()
     {
         return $this->slug;
     }
 
-    public function getTitle(): ?string
+    /**
+     * @return string
+     */
+    public function getTitle()
     {
         return $this->title;
     }
@@ -137,7 +146,10 @@ class TournamentSeason
         return $this;
     }
 
-    public function getTournament(): ?Tournament
+    /**
+     * @return Tournament
+     */
+    public function getTournament()
     {
         return $this->tournament;
     }
@@ -175,7 +187,7 @@ class TournamentSeason
         return $this;
     }
 
-    public function getQualifyingRoundStartDate(): ?\DateTime
+    public function getQualifyingRoundStartDate(): \DateTime
     {
         return $this->qualifyingRoundStartDate;
     }
@@ -187,7 +199,7 @@ class TournamentSeason
         return $this;
     }
 
-    public function getQualifyingRoundEndDate(): ?\DateTime
+    public function getQualifyingRoundEndDate(): \DateTime
     {
         return $this->qualifyingRoundEndDate;
     }
@@ -199,7 +211,7 @@ class TournamentSeason
         return $this;
     }
 
-    public function getStartDate(): ?\DateTime
+    public function getStartDate(): \DateTime
     {
         return $this->startDate;
     }
@@ -211,7 +223,7 @@ class TournamentSeason
         return $this;
     }
 
-    public function getEndDate(): ?\DateTime
+    public function getEndDate(): \DateTime
     {
         return $this->endDate;
     }

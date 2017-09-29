@@ -67,17 +67,31 @@ class Advert
      */
     private $createdAt;
 
-    public function getId(): ?int
+    public function __construct()
+    {
+        $this->createdA = new \DateTime();
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
     {
         return $this->id;
     }
 
-    public function getSlug(): ?string
+    /**
+     * @return string
+     */
+    public function getSlug()
     {
         return $this->slug;
     }
 
-    public function getTitle(): ?string
+    /**
+     * @return string
+     */
+    public function getTitle()
     {
         return $this->title;
     }
@@ -89,7 +103,10 @@ class Advert
         return $this;
     }
 
-    public function getIntro(): ?string
+    /**
+     * @return string
+     */
+    public function getIntro()
     {
         return $this->intro;
     }
@@ -101,7 +118,10 @@ class Advert
         return $this;
     }
 
-    public function getBody(): ?string
+    /**
+     * @return string
+     */
+    public function getBody()
     {
         return $this->body;
     }
@@ -113,7 +133,10 @@ class Advert
         return $this;
     }
 
-    public function getPriority(): ?int
+    /**
+     * @return int
+     */
+    public function getPriority()
     {
         return $this->priority;
     }
@@ -128,7 +151,7 @@ class Advert
     /**
      * @return \DateTime
      */
-    public function getCreatedAt(): ?\DateTime
+    public function getCreatedAt(): \DateTime
     {
         return $this->createdAt;
     }

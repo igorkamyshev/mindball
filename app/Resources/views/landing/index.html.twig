@@ -26,11 +26,13 @@
             <a href="{{ path('adverts') }}" class="btn btn-block">Все новости</a>
         </div>
         <div class="col s12 l7 pull-l5">
-            <div class="card">
-                <div class="card-content">
-                    <p>...</p>
+            {% for info in infoCards %}
+                <div class="card">
+                    <div class="card-content">
+                        <p>{{ info.body|raw }}</p>
+                    </div>
                 </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

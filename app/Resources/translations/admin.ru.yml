@@ -22,6 +22,10 @@ entity.season.title: Сезон турнира
 entity.season.list: Сезоны турниров
 entity.season.form: Редактирование сезона
 
+entity.info.title: Информационная карточка
+entity.info.list: Информационные карточки
+entity.info.form: Редактирование информационной карточки
+
 entity.advert.title: Объявление
 entity.advert.list: Объявления
 entity.advert.form: Редактирование объявления
@@ -66,3 +70,5 @@ End date: Конец турнира
 Approved: Одобрено
 Review: Отзыв
 ReviewWithoutApproval: Неодобренный отзыв
+Info: Информационная карточка
+Published: Опубликовано

@@ -3,6 +3,7 @@
 namespace AppBundle\Controller\Landing;
 
 use AppBundle\Entity\Advert;
+use AppBundle\Entity\Info;
 use AppBundle\Entity\Review;
 use AppBundle\Entity\Tournament;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -24,10 +25,16 @@ class DefaultController extends Controller
             ->getRepository(Advert::class)
             ->findBy([], ['createdAt' => 'DESC'], self::LAST_ADVERTS_LIMIT);
 
+        $infoCards = $this
+            ->getDoctrine()
+            ->getRepository(Info::class)
+            ->findBy(['published' => true], ['priority' => 'DESC']);
+
         return $this->render(
             'landing/index.html.twig',
             [
-                'adverts' => $adverts,
+                'adverts'   => $adverts,
+                'infoCards' => $infoCards,
             ]
         );
     }

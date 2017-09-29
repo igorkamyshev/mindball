@@ -10,6 +10,7 @@ easy_admin:
             - { entity: TournamentWithoutLicense, icon: 'exclamation-triangle', label: entity.tournamentWithoutLicense.list }
 
             - { label: menu.content }
+            - { entity: Info, icon: 'info', label: entity.info.list}
             - { entity: Advert, icon: 'file-text', label: entity.advert.list}
             - { entity: Review, icon: 'heart', label: entity.review.list}
             - { entity: ReviewWithoutApproval, icon: 'heart-o', label: entity.reviewWithoutApproval.list}

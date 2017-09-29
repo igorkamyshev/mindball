@@ -1,0 +1,20 @@
+easy_admin:
+    entities:
+        Info:
+            class: AppBundle\Entity\Info
+            label: entity.info.title
+            list:
+                title: entity.info.list
+                sort: 'priority'
+                fields:
+                    - priority
+                    - title
+                    - published
+            form:
+                title: entity.info.form
+                fields:
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.general', icon: 'info' }
+                    - title
+                    - published
+                    - priority
+                    - body

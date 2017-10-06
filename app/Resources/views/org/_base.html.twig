@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Организация | MindBall</title>
+
+    <link rel="shortcut icon" href="{{ asset('bundles/app/landing/images/favicon.ico') }}"/>
+
+    {% block styles %}
+        {% stylesheets
+            'bundles/app/landing/css/materialize.css'
+            'bundles/app/landing/css/style.css'
+            filter='cssrewrite'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
+        {% endstylesheets %}
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    {% endblock %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+
+    <header class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="{{ path("homepage") }}" class="brand-logo">Кабинет организатора</a>
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+    </header>
+    <ul id="slide-out" class="side-nav fixed">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img class="responsive-img" src="{{ asset('bundles/app/landing/images/backgroud.jpg') }}" alt="MindBall Back" />
+                </div>
+                <a href="{{ path('homepage') }}"><img class="circle" src="{{ asset('bundles/app/landing/images/logo_blue.jpg') }}" alt="MindBall Logo"></a>
+                <span class="white-text name">Igor Kamyshev</span>
+                <span class="white-text email">garik.novel@gmail.com</span>
+            </div>
+        </li>
+
+        {# TODO: change icon #}
+        <li><a class="waves-effect" href="{{ path('org_tournaments') }}"><i class="material-icons">assignment</i>Турниры</a></li>
+        {# TODO: change icon #}
+        <li><a class="waves-effect" href="#!"><i class="material-icons">assignment</i>Лицензии и оплаты</a></li>
+
+        <li><div class="divider"></div></li>
+
+        {# TODO: change icon #}
+        <li><a class="waves-effect" href="#!"><i class="material-icons">assignment</i>Новости</a></li>
+        {# TODO: change icon #}
+        <li><a class="waves-effect" href="#!"><i class="material-icons">assignment</i>Впечатления</a></li>
+
+        <li><div class="divider"></div></li>
+
+        {# TODO: mode bottom #}
+        <li><a class="waves-effect" href="#!"><i class="material-icons">assignment</i>Выйти</a></li>
+    </ul>
+
+    <main>
+        <div class="row">
+            {% block content %}
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title">MindBall</span>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-wrapper">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">MindBall</h5>
+                    <p class="grey-text text-lighten-4">
+                        Образование – важно для человечества. Вы делаете мир лучше, спасибо.
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Архив</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="{{ path('adverts') }}">Новости</a></li>
+                        <li><a class="grey-text text-lighten-3" href="{{ path('reviews') }}">Впечатления</a></li>
+                        <li><a class="grey-text text-lighten-3" href="{{ path('albums') }}">Фотографии</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © 2016 - {{ "now"|date("Y") }} MindBall
+        </div>
+    </footer>
+
+    {# TODO: create new advert #}
+    <div class="fixed-action-btn">
+        <a href="" class="btn-floating btn-large">
+            <i class="large material-icons">account_circle</i>
+        </a>
+    </div>
+
+    {% block scripts %}
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+        {% javascripts '@AppBundle/Resources/public/landing/js/scripts.js'%}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+
+</body>
+</html>

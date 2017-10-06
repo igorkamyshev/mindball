@@ -17,6 +17,7 @@ class OrgController extends Controller
         return $this->render('org/index.html.twig');
     }
 
+    // TODO: real logics
     /**
      * @Route("/org/tournaments", name="org_tournaments")
      */

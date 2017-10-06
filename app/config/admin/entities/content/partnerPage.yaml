@@ -1,0 +1,18 @@
+easy_admin:
+    entities:
+        PartnerPage:
+            class: AppBundle\Entity\PartnerPage
+            label: entity.partnerPage.title
+            list:
+                title: entity.partnerPage.list
+                sort: 'title'
+                fields:
+                    - title
+                    - published
+            form:
+                title: entity.partnerPage.form
+                fields:
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.general', icon: 'info' }
+                    - title
+                    - published
+                    - body

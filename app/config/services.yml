@@ -44,3 +44,15 @@ services:
                     name: kernel.event_listener
                     event: kernel.request
                     method: onKernelRequest
+
+    partner_pages_injector:
+            class: AppBundle\Services\Listeners\PartnerPagesInjector
+            arguments:
+                - '@doctrine.orm.entity_manager'
+                - '@twig'
+            tags:
+                -
+                    name: kernel.event_listener
+                    event: kernel.request
+                    method: onKernelRequest
+

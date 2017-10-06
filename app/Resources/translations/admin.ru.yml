@@ -36,6 +36,10 @@ entity.review.form: Редактирование отзывов
 
 entity.reviewWithoutApproval.list: Неодобренные отзывы
 
+entity.partnerPage.title: Партнерская страница
+entity.partnerPage.list: Партнерские страницы
+entity.partnerPage.form: Педактирование партнерской страницы
+
 action.search: Искать
 action.new: Создать
 action.save: Сохранить

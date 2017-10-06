@@ -83,15 +83,19 @@
                 <div class="col l6 s12">
                     <h5 class="white-text">MindBall</h5>
                     <p class="grey-text text-lighten-4">
-                        MindBall – платформа. Любой может провести турнир на этой площадке. Мы открыты к любым формам сотрудничества.
+                        MindBall – платформа. Вы можете провести турнир на этой площадке. Мы открыты к любым формам сотрудничества.
                     </p>
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Партнерам</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Провести турнир</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Купить рекламу</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Купить данные</a></li>
+                        {% for page in partnerPages %}
+                            <li>
+                                <a class="grey-text text-lighten-3" href="{{ path('partner_page', { slug: page.slug }) }}">
+                                    {{ page.title }}
+                                </a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>

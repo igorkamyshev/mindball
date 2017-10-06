@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Advert;
 use AppBundle\Entity\Info;
+use AppBundle\Entity\PartnerPage;
 use AppBundle\Entity\Review;
 use AppBundle\Entity\Tournament;
 use AppBundle\Entity\TournamentSeason;
@@ -152,6 +153,20 @@ class LandingController extends Controller
             'landing/active_season.html.twig',
             [
                 'season' => $season,
+            ]
+        );
+    }
+
+    /**
+     * @Route("/partner/{slug}", name="partner_page")
+     * @ParamConverter("page", options={"mapping": {"slug": "slug"}})
+     */
+    public function partnerPageAction(PartnerPage $page)
+    {
+        return $this->render(
+            'landing/partner_page.html.twig',
+            [
+                'page' => $page,
             ]
         );
     }

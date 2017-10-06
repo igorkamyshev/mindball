@@ -1,0 +1,7 @@
+{% extends 'landing/_base.html.twig' %}
+
+{% block content %}
+    <h3>{{ page.title }}</h3>
+
+    {{ page.body|md2html|raw }}
+{% endblock %}

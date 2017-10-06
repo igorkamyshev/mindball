@@ -10,7 +10,7 @@
                     <span>{{ tournament.area.title }}</span>
                 </div>
                 <div class="card-action">
-                    <a href="{{ path("tournament_albums", { slug: tournament.slug }) }}">Открыть</a>
+                    <a href="{{ path("tournament_album", { slug: tournament.slug }) }}">Открыть</a>
                 </div>
             </div>
         {% endfor %}

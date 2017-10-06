@@ -10,7 +10,9 @@
                     {{ review.body }}
                 </div>
                 <div class="card-action">
-                    <a href="#!">{{ review.tournamentSeason.title }}</a>
+                    <a href="{{ path('season_album', { slug: review.tournamentSeason.slug }) }}">
+                        {{ review.tournamentSeason.title }}
+                    </a>
                 </div>
             </div>
         {% endfor %}

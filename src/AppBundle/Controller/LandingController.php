@@ -1,22 +1,23 @@
 <?php
 
-namespace AppBundle\Controller\Landing;
+namespace AppBundle\Controller;
 
 use AppBundle\Entity\Advert;
 use AppBundle\Entity\Info;
 use AppBundle\Entity\Review;
 use AppBundle\Entity\Tournament;
+use AppBundle\Entity\TournamentSeason;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+class LandingController extends Controller
 {
     const LAST_ADVERTS_LIMIT = 4;
 
     /**
-     * @Route("/", name = "homepage")
+     * @Route("/", name="homepage")
      */
     public function indexAction()
     {
@@ -40,7 +41,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/adverts", name = "adverts")
+     * @Route("/adverts", name="adverts")
      */
     public function advertsAction()
     {
@@ -59,7 +60,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/adverts/{slug}", name = "advert")
+     * @Route("/adverts/{slug}", name="advert")
      * @ParamConverter("advert", options={"mapping": {"slug": "slug"}})
      */
     public function advertAction(Advert $advert)
@@ -73,7 +74,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/reviews", name = "reviews")
+     * @Route("/reviews", name="reviews")
      */
     public function reviewsAction()
     {
@@ -95,7 +96,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/albums", name = "albums")
+     * @Route("/albums", name="albums")
      */
     public function albumsAction()
     {
@@ -114,15 +115,29 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/albums/{slug}", name = "tournament_albums")
+     * @Route("/albums/{slug}", name="tournament_album")
      * @ParamConverter("tournament", options={"mapping": {"slug": "slug"}})
      */
     public function tournamentAlbumsAction(Tournament $tournament)
     {
         return $this->render(
-            'landing/tournament_albums.html.twig',
+            'landing/tournament_album.html.twig',
             [
                 'tournament' => $tournament,
+            ]
+        );
+    }
+
+    /**
+     * @Route("/albums/season/{slug}", name="season_album")
+     * @ParamConverter("season", options={"mapping": {"slug": "slug"}})
+     */
+    public function seasonAlbumAction(TournamentSeason $season)
+    {
+        return $this->render(
+            'landing/season_album.html.twig',
+            [
+                'season' => $season,
             ]
         );
     }

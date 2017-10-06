@@ -14,7 +14,7 @@
                     <span class="card-title">{{ season.title }}</span>
                 </div>
                 <div class="card-action">
-                    <a href="#!">Смотреть</a>
+                    <a href="{{ path('season_album', { slug: season.slug }) }}">Смотреть</a>
                 </div>
             </div>
         {% endfor %}

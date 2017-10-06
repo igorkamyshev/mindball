@@ -141,4 +141,18 @@ class LandingController extends Controller
             ]
         );
     }
+
+    /**
+     * @Route("/tournament/{slug}", name="active_season")
+     * @ParamConverter("season", options={"mapping": {"slug": "slug"}})
+     */
+    public function activeSeasonAction(TournamentSeason $season)
+    {
+        return $this->render(
+            'landing/active_season.html.twig',
+            [
+                'season' => $season,
+            ]
+        );
+    }
 }

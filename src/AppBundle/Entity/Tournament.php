@@ -188,6 +188,20 @@ class Tournament
         });
     }
 
+    public function getActiveSeasons() : Collection
+    {
+        return $this->seasons->filter(
+            function (TournamentSeason $season) {
+                return $season->getEndDate() > (new \DateTime());
+            }
+        );
+    }
+
+    public function isActive() : bool
+    {
+        return $this->getActiveSeasons()->count() > 0;
+    }
+
     public function __toString() : string
     {
         return $this->getTitle() . ' (' . $this->getArea() . ')';

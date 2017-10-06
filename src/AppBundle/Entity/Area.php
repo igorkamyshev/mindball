@@ -89,6 +89,37 @@ class Area
         return $this->tournaments;
     }
 
+    public function getActiveTournaments() : Collection
+    {
+        return $this->tournaments->filter(
+            function (Tournament $tournament) {
+                return $tournament->isActive();
+            }
+        );
+    }
+
+    // Too functionality
+    public function getActiveSeasons() : array
+    {
+        return array_reduce(
+            array_map(
+                function (Tournament $tournament) {
+                    return $tournament->getActiveSeasons()->toArray();
+                },
+                $this->getActiveTournaments()->toArray()
+            ),
+            function (array $carry, array $item) {
+                return array_merge($carry, $item);
+            },
+            []
+        );
+    }
+
+    public function hasActiveTournaments() : bool
+    {
+        return $this->getActiveTournaments()->count() > 0;
+    }
+
     public function addTournament(Tournament $tournament) : Area
     {
         $this->tournaments->add($tournament);

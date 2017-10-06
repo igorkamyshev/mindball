@@ -44,9 +44,18 @@
             </div>
         </li>
 
-        <li><a class="subheader">Томск</a></li>
-        <li><a href="#!"><i class="material-icons">flag</i>Физические бои 2018</a></li>
-        <li><div class="divider"></div></li>
+        {% for area in areas %}
+            <li><a class="subheader">{{ area.title }}</a></li>
+            {% for season in area.activeSeasons %}
+                <li>
+                    <a href="{{ path('active_season', { slug: season.slug }) }}">
+                        <i class="material-icons">flag</i>
+                        {{ season.title }}
+                    </a>
+                </li>
+            {% endfor %}
+            <li><div class="divider"></div></li>
+        {% endfor %}
 
         <li><a class="subheader">Архив</a></li>
         <li><a class="waves-effect" href="{{ path('adverts') }}"><i class="material-icons">assignment</i>Новости</a></li>

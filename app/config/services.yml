@@ -33,3 +33,14 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    tournaments_injector:
+            class: AppBundle\Services\Listeners\TournamentsInjector
+            arguments:
+                - '@doctrine.orm.entity_manager'
+                - '@twig'
+            tags:
+                -
+                    name: kernel.event_listener
+                    event: kernel.request
+                    method: onKernelRequest

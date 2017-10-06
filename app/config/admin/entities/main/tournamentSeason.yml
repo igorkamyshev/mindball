@@ -19,6 +19,7 @@ easy_admin:
                     - title
                     - year
                     - tournament
+                    - address
 
                     - { type: 'group', css_class: 'col-sm-12 col-md-6', label: 'form.dates', icon: 'calendar-check-o' }
                     - qualifyingRoundStartDate

@@ -44,9 +44,16 @@ class TournamentSeason
     /**
      * @var integer
      *
-     * @ORM\Column(name="year", type="integer", length=63, nullable=false)
+     * @ORM\Column(name="year", type="integer", nullable=false)
      */
     private $year;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     */
+    private $address;
 
     /**
      * @var Tournament
@@ -147,6 +154,21 @@ class TournamentSeason
     }
 
     /**
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function setAddress(string $address): TournamentSeason
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
      * @return Tournament
      */
     public function getTournament()
@@ -187,7 +209,10 @@ class TournamentSeason
         return $this;
     }
 
-    public function getQualifyingRoundStartDate(): \DateTime
+    /**
+     * @return \DateTime
+     */
+    public function getQualifyingRoundStartDate()
     {
         return $this->qualifyingRoundStartDate;
     }
@@ -199,7 +224,10 @@ class TournamentSeason
         return $this;
     }
 
-    public function getQualifyingRoundEndDate(): \DateTime
+    /**
+     * @return \DateTime
+     */
+    public function getQualifyingRoundEndDate()
     {
         return $this->qualifyingRoundEndDate;
     }

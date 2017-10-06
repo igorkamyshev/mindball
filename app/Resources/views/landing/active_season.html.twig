@@ -8,4 +8,27 @@
             <small>{{ season.tournament.title }}</small>
         </h3>
     </div>
+    <div class="col s12 m7">
+        <p>..</p>
+    </div>
+    <div class="col s12 m5">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Адрес проведения</span>
+                <p>{{ season.tournament.area.title }}, {{ season.address }}</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">Отборочный тур</span>
+                <p>
+                    <strong>{{ season.qualifyingRoundEndDate|date('d.m.Y') }}</strong>
+                    с {{ season.qualifyingRoundStartDate|date('H.i') }} до {{ season.qualifyingRoundEndDate|date('H.i') }} МСК
+                </p>
+                {#<hr />#}
+                <span class="card-title">Очный тур</span>
+                <p>с <strong>{{ season.startDate|date('d.m.Y') }}</strong> по <strong>{{ season.endDate|date('d.m.Y') }}</strong></p>
+            </div>
+        </div>
+    </div>
 {% endblock %}

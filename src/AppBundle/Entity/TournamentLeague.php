@@ -15,6 +15,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TournamentLeague
 {
+    const LEVELS = [
+        0 => 'Высшая',
+        1 => 'Первая',
+        2 => 'Вторая',
+    ];
+
     /**
      * @var integer
      *
@@ -105,6 +111,11 @@ class TournamentLeague
         $this->level = $level;
 
         return $this;
+    }
+
+    public function getLevelName()
+    {
+        return self::LEVELS[$this->level];
     }
 
     /**

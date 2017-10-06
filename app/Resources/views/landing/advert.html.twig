@@ -2,4 +2,6 @@
 
 {% block content %}
     <h3>{{ advert.title }}</h3>
+
+    {{ advert.body|md2html|raw }}
 {% endblock %}

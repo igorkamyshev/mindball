@@ -2,7 +2,7 @@
 .text-logo { font-family: "Montserrat Alternates" !important; }
 
 body {
-    background: #eeeeee;
+    background: #FAFAFA;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -29,7 +29,7 @@ header, main, footer {
     margin-bottom: 1rem !important;
 }
 .card-content > p:last-of-type {
-    margin-bottom: 0 !important;
+    margin-bottom: 0 !import;
 }
 
 @media only screen and (max-width : 992px) {

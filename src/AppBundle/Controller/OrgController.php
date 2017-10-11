@@ -42,7 +42,7 @@ class OrgController extends Controller
         return $this->render(
             'org/adverts.html.twig',
             [
-                'userAdverts' => $repo->findFilteredByPage($filters, 1),
+                'userAdverts' => $repo->findFilteredByPage($filters),
             ]
         );
     }

@@ -5,6 +5,7 @@ easy_admin:
             - { entity: Area, icon: 'map-marker', label: entity.area.list }
             - { entity: Tournament, icon: 'dot-circle-o', label: entity.tournament.list }
             - { entity: TournamentSeason, icon: 'calendar-check-o', label: entity.season.list }
+            - { entity: User, icon: 'users', label: entity.user.list }
 
             - { label: menu.finance }
             - { entity: TournamentWithoutLicense, icon: 'exclamation-triangle', label: entity.tournamentWithoutLicense.list }

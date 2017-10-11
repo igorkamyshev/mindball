@@ -3,10 +3,12 @@ menu.finance: Финансы
 menu.content: Контент сайта
 
 form.general: Основная информация
+form.security: Безопасность
 form.license: Лицензия
 form.org: Организаторы
 form.content: Содержимое
 form.dates: Даты
+form.permissions: Права
 
 entity.area.title: Город
 entity.area.list: Города
@@ -39,6 +41,10 @@ entity.reviewWithoutApproval.list: Неодобренные отзывы
 entity.partnerPage.title: Партнерская страница
 entity.partnerPage.list: Партнерские страницы
 entity.partnerPage.form: Педактирование партнерской страницы
+
+entity.user.title: Пользователь
+entity.user.list: Пользователи
+entity.user.form: Редактирование пользователя
 
 action.search: Искать
 action.new: Создать
@@ -78,3 +84,12 @@ Info: Информационная карточка
 Published: Опубликовано
 Address: Адрес проведения
 PartnerPage: Партнерская страница
+
+User: Пользователь
+Username: Логин
+Username canonical: Логин (канонический)
+Last login: Последний вход
+Enabled: Активен
+Roles: Роли
+Password requested at: Восстановление пароля запрошено
+

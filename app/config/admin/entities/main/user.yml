@@ -1,0 +1,24 @@
+easy_admin:
+    entities:
+        User:
+            class: AppBundle\Entity\User
+            label: entity.user.title
+            list:
+                title: entity.area.list
+                sort: 'username'
+                fields:
+                    - username
+            form:
+                title: entity.user.form
+                fields:
+                    - { type: 'group', css_class: 'col-sm-12 col-md-7', label: 'form.general', icon: 'info' }
+                    - username
+                    - email
+                    - enabled
+
+                    - { type: 'group', css_class: 'col-sm-12 col-md-5', label: 'form.security', icon: 'key' }
+                    - lastLogin
+                    - passwordRequestedAt
+
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.permissions', icon: 'hand-spock-o' }
+                    - roles

@@ -67,9 +67,25 @@ class Advert
      */
     private $createdAt;
 
+    /**
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="adverts")
+     * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
+     */
+    private $author;
+
+    /**
+     * @var TournamentSeason
+     *
+     * @ORM\ManyToOne(targetEntity="TournamentSeason", inversedBy="adverts")
+     * @ORM\JoinColumn(name="season_id", referencedColumnName="id")
+     */
+    private $season;
+
     public function __construct()
     {
-        $this->createdA = new \DateTime();
+        $this->createdAt = new \DateTime();
     }
 
     /**
@@ -161,5 +177,37 @@ class Advert
         $this->createdAt = $createdAt;
 
         return $this;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(User $author): Advert
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * @return TournamentSeason
+     */
+    public function getSeason()
+    {
+        return $this->season;
+    }
+
+    public function setSeason(TournamentSeason $season): Advert
+    {
+        $this->season = $season;
+
+        return $this;
+    }
+
+    public function __toString() : string
+    {
+        return $this->title;
     }
 }

@@ -98,10 +98,18 @@ class TournamentSeason
      */
     private $endDate;
 
+    /**
+     * @var Collection
+     *
+     * @ORM\OneToMany(targetEntity="Advert", mappedBy="season")
+     */
+    private $adverts;
+
 
     public function __construct()
     {
         $this->leagues = new ArrayCollection();
+        $this->adverts = new ArrayCollection();
 
         $this->qualifyingRoundStartDate = new \DateTime();
         $this->qualifyingRoundEndDate = new \DateTime();
@@ -266,5 +274,31 @@ class TournamentSeason
     public function __toString() : string
     {
         return $this->getTitle() . ' – ' . $this->getTournament();
+    }
+
+    public function getAdverts() : Collection
+    {
+        return $this->adverts;
+    }
+
+    public function addAdvert(Advert $advert) : TournamentSeason
+    {
+        $this->adverts->add($advert);
+
+        return $this;
+    }
+
+    public function removeAdvert(Advert $advert) : TournamentSeason
+    {
+        $this->adverts->removeElement($advert);
+
+        return $this;
+    }
+
+    public function clearAdverts() : TournamentSeason
+    {
+        $this->adverts->clear();
+
+        return $this;
     }
 }

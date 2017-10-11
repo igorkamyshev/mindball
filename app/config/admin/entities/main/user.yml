@@ -4,7 +4,7 @@ easy_admin:
             class: AppBundle\Entity\User
             label: entity.user.title
             list:
-                title: entity.area.list
+                title: entity.user.list
                 sort: 'username'
                 fields:
                     - username

@@ -10,11 +10,15 @@ easy_admin:
                     - createdAt
                     - title
                     - priority
+                    - author
+                    - season
             form:
                 title: entity.advert.form
                 fields:
                     - { type: 'group', css_class: 'col-sm-12', label: 'form.general', icon: 'info' }
                     - title
+                    - author
+                    - season
                     - priority
                     - createdAt
                     - { type: 'group', css_class: 'col-sm-12', label: 'form.content', icon: 'file-text' }

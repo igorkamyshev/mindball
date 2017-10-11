@@ -1,0 +1,19 @@
+{% extends 'org/_base.html.twig' %}
+
+{% block content %}
+    <h3>Новости созданные вами</h3>
+    <div class="col s12">
+        {% for advert in adverts %}
+            <div class="card">
+                <div class="card-content">
+                    <span class="chip right">{{ advert.createdAt|date('d.m.Y') }}</span>
+                    <span class="card-title">{{ advert.title }}</span>
+                </div>
+                <div class="card-action">
+                    <a href="#">Редактировать</a>
+                    <a href="#">Удалить</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

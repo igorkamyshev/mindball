@@ -35,7 +35,7 @@ class OrgController extends Controller
     {
         $repo = $this->getDoctrine()->getRepository(Advert::class);
 
-        // TODO: add adverts from season
+        // TODO: replace by adverts from season
         $filters = [];
         $filters['author'] = $this->getUser();
 
@@ -55,7 +55,7 @@ class OrgController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        // TODO: Add check for season
+        // TODO: replace by check for season
         if ($advert->getAuthor()->getId() != $this->getUser()->getId()) {
             return $this->createAccessDeniedException();
         }

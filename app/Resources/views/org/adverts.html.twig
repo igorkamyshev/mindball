@@ -1,9 +1,8 @@
 {% extends 'org/_base.html.twig' %}
 
 {% block content %}
-    <h3>Новости созданные вами</h3>
-    <div class="col s12">
-        {% for advert in adverts %}
+    <div class="col s12 m6">
+        {% for advert in userAdverts %}
             <div class="card">
                 <div class="card-content">
                     <span class="chip right">{{ advert.createdAt|date('d.m.Y') }}</span>

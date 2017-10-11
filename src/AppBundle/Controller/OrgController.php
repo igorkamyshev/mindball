@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\Advert;
 use AppBundle\Entity\User;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -32,14 +33,16 @@ class OrgController extends Controller
      */
     public function advertsAction()
     {
+        $repo = $this->getDoctrine()->getRepository(Advert::class);
+
         // TODO: add adverts from season
-        /** @var User $user */
-        $user = $this->getUser();
+        $filters = [];
+        $filters['author'] = $this->getUser();
 
         return $this->render(
             'org/adverts.html.twig',
             [
-                'adverts' => $user->getAdverts(),
+                'userAdverts' => $repo->findFilteredByPage($filters, 1),
             ]
         );
     }

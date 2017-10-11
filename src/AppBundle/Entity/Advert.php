@@ -10,8 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
  * Class Advert
  * @package AppBundle\Entity
  *
- * @ORM\Table(name="adverts")
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\AdvertRepository")
+ * @ORM\Table(name="adverts")
  */
 class Advert
 {
@@ -184,7 +185,11 @@ class Advert
         return $this->author;
     }
 
-    public function setAuthor(User $author): Advert
+    /**
+     * @param User $author
+     * @return Advert
+     */
+    public function setAuthor($author)
     {
         $this->author = $author;
 
@@ -199,7 +204,11 @@ class Advert
         return $this->season;
     }
 
-    public function setSeason(TournamentSeason $season): Advert
+    /**
+     * @param TournamentSeason $season
+     * @return Advert
+     */
+    public function setSeason($season)
     {
         $this->season = $season;
 

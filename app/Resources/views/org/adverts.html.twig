@@ -10,7 +10,7 @@
                 </div>
                 <div class="card-action">
                     <a href="#">Редактировать</a>
-                    <a href="#">Удалить</a>
+                    <a href="{{ path('org_advert_delete', { slug: advert.slug }) }}">Удалить</a>
                 </div>
             </div>
         {% endfor %}

@@ -46,4 +46,28 @@ class OrgController extends Controller
             ]
         );
     }
+
+    /**
+     * @Route("/org/advert/delete/{slug}", name="org_advert_delete")
+     * @ParamConverter("advert", options={"mapping": {"slug": "slug"}})
+     */
+    public function deleteAdvertAction(Advert $advert)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        // TODO: Add check for season
+        if ($advert->getAuthor()->getId() != $this->getUser()->getId()) {
+            return $this->createAccessDeniedException();
+        }
+
+        $em->remove($advert);
+        $em->flush();
+
+        return $this->render(
+            'org/info.html.twig',
+            [
+                'message' => 'Объявление "' . $advert->getTitle() . '" удалено.',
+            ]
+        );
+    }
 }

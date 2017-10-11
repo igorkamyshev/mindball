@@ -1,29 +1,6 @@
-<!doctype html>
-<html>
+{% extends '_base.html.twig' %}
 
-<head>
-    <meta charset="utf-8">
-
-    <title>MindBall - Главная</title>
-
-    <link rel="shortcut icon" href="{{ asset('bundles/app/landing/images/favicon.ico') }}"/>
-
-    {% block styles %}
-        {% stylesheets
-        'bundles/app/landing/css/materialize.css'
-        'bundles/app/landing/css/style.css'
-        filter='cssrewrite' %}
-            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all" />
-        {% endstylesheets %}
-
-        <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
-    {% endblock %}
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-
-<body>
-
+{% block header %}
     <header class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
@@ -32,6 +9,9 @@
             </div>
         </nav>
     </header>
+{% endblock %}
+
+{% block menu %}
     <ul id="slide-out" class="side-nav fixed">
         <li>
             <div class="user-view">
@@ -62,63 +42,29 @@
         <li><a class="waves-effect" href="{{ path('reviews') }}"><i class="material-icons">rate_review</i>Впечатления</a></li>
         <li><a class="waves-effect" href="{{ path('albums') }}"><i class="material-icons">photo_library</i>Фотографии</a></li>
     </ul>
+{% endblock %}
 
-    <main>
+{% block footer %}
+    <div class="footer-wrapper">
         <div class="row">
-            {% block content %}
-                <div class="col s12">
-                    <div class="card">
-                        <div class="card-content">
-                            <span class="card-title">MindBall</span>
-                        </div>
-                    </div>
-                </div>
-            {% endblock %}
-        </div>
-    </main>
-
-    <footer class="page-footer">
-        <div class="footer-wrapper">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">MindBall</h5>
-                    <p class="grey-text text-lighten-4">
-                        MindBall – платформа. Вы можете провести турнир на этой площадке. Мы открыты к любым формам сотрудничества.
-                    </p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Партнерам</h5>
-                    <ul>
-                        {% for page in partnerPages %}
-                            <li>
-                                <a class="grey-text text-lighten-3" href="{{ path('partner_page', { slug: page.slug }) }}">
-                                    {{ page.title }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
+            <div class="col l6 s12">
+                <h5 class="white-text">MindBall</h5>
+                <p class="grey-text text-lighten-4">
+                    MindBall – платформа. Вы можете провести турнир на этой площадке. Мы открыты к любым формам сотрудничества.
+                </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Партнерам</h5>
+                <ul>
+                    {% for page in partnerPages %}
+                        <li>
+                            <a class="grey-text text-lighten-3" href="{{ path('partner_page', { slug: page.slug }) }}">
+                                {{ page.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
-        <div class="footer-copyright">
-            © 2016 - {{ "now"|date("Y") }} MindBall
-        </div>
-    </footer>
-
-    <div class="fixed-action-btn">
-        <a href="" class="btn-floating btn-large">
-            <i class="large material-icons">account_circle</i>
-        </a>
     </div>
-
-    {% block scripts %}
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-
-        {% javascripts '@AppBundle/Resources/public/landing/js/scripts.js'%}
-            <script type="text/javascript" src="{{ asset_url }}"></script>
-        {% endjavascripts %}
-    {% endblock %}
-
-</body>
-</html>
+{% endblock %}

@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
             new FOS\UserBundle\FOSUserBundle(),
 
             new AppBundle\AppBundle(),

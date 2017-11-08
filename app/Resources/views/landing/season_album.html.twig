@@ -7,5 +7,12 @@
             <br />
             <small>{{ season.tournament.title }}</small>
         </h3>
+        <div class="row" style="margin: 0px; padding: 3px;">
+            {% for photo in season.photos %}
+                <div class="col s6 m4 l3" style="margin: 0px; padding: 3px;">
+                    <img class="materialboxed responsive-img z-depth-1"  src="{{ image_path ~ '/' ~ photo.image }}">
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

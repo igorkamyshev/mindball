@@ -105,11 +105,22 @@ class TournamentSeason
      */
     private $adverts;
 
+    /**
+     * @var Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Image", cascade={"persist"})
+     * @ORM\JoinTable(name="seasons_images",
+     *      joinColumns={@ORM\JoinColumn(name="season_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="id", unique=true)}
+     *      )
+     */
+    private $photos;
 
     public function __construct()
     {
         $this->leagues = new ArrayCollection();
         $this->adverts = new ArrayCollection();
+        $this->photos = new ArrayCollection();
 
         $this->qualifyingRoundStartDate = new \DateTime();
         $this->qualifyingRoundEndDate = new \DateTime();
@@ -298,6 +309,32 @@ class TournamentSeason
     public function clearAdverts() : TournamentSeason
     {
         $this->adverts->clear();
+
+        return $this;
+    }
+
+    public function getPhotos() : Collection
+    {
+        return $this->photos;
+    }
+
+    public function addPhoto(Image $photo) : TournamentSeason
+    {
+        $this->photos->add($photo);
+
+        return $this;
+    }
+
+    public function removePhoto(Image $photo) : TournamentSeason
+    {
+        $this->photos->removeElement($photo);
+
+        return $this;
+    }
+
+    public function clearPhotos() : TournamentSeason
+    {
+        $this->photos->clear();
 
         return $this;
     }

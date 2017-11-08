@@ -37,3 +37,6 @@ easy_admin:
                           by_reference: false,
                         }
                       }
+
+                    - { type: 'group', css_class: 'col-sm-12', label: 'form.photos', icon: 'picture-o' }
+                    - { property: 'photos', type: 'collection', type_options: { entry_type: 'AppBundle\Form\ImageType', by_reference: false }}

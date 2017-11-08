@@ -9,6 +9,7 @@ form.org: Организаторы
 form.content: Содержимое
 form.dates: Даты
 form.permissions: Права
+form.photos: Фотографии
 
 entity.area.title: Город
 entity.area.list: Города
@@ -86,6 +87,7 @@ Address: Адрес проведения
 PartnerPage: Партнерская страница
 Author: Автор
 Season: Сезон
+Photos: Фотографии
 
 User: Пользователь
 Username: Логин
